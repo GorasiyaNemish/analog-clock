@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-container {
+    height: 350px;
+    width: 350px;
+    background-color: white;
+    color: white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px 8px rgba(176, 211, 50, 0.5);
+}
+
+.digits span {
+    font-size: 45px;
+    color: blue;
+    position: absolute;
+    transform: rotate(calc(30deg*var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+.design span {
+    position: absolute;
+    transform: rotate(calc(30deg*var(--i)));
+    inset: 130px;
+    text-align: center;
+    background-color: blueviolet;
+}
+
+.digits span b {
+    transform: rotate(calc(-30deg*var(--i)));
+    display: inline-block;
+}
+
+.clock-container::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 5;
+}
+
+.hand {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hand b {
+    position: absolute;
+    width: 5px;
+    background-color: var(--color);
+    height: var(--len);
+    border-radius: 8px;
+}
